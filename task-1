@@ -1,0 +1,27 @@
+import React, { useState } from 'react';
+
+const TaskList = () => {
+    const [tasks, setTasks] = useState([
+        { title: 'Закінчити проект', date: '2023-11-12', priority: 'високий' },
+        { title: 'Сходити в магазин', date: '2023-11-13', priority: 'середній' },
+        { title: 'Пробіжка в парку', date: '2023-11-14', priority: 'низький' },
+    ]);
+
+    return (
+        <div>
+            <h2>Список завдань</h2>
+            <ul>
+                {tasks.map((task, index) => (
+                    <li key={index}>
+                        <strong>Назва:</strong> {task.title} <br />
+                        <strong>Дата:</strong> {task.date} <br />
+                        <strong>Пріоритет:</strong> {task.priority} <br />
+                        <hr />
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+};
+
+export default TaskList;
